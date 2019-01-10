@@ -1,4 +1,14 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block "opengraph" %}
+<meta property="og:title" content="Where to find {{ object.username }}" />
+<meta property="og:type" content="profile" />
+<meta property="og:url" content="{{ here }}" />
+<meta property="og:image" content="{{ logo }}" />
+<meta property="og:image:alt" content="Where to Find Me logo" />
+<meta property="og:description" content="A business card for the internet." />
+{% endblock "opengraph" %}
 
 {% block "main" %}
 <h1 class="display-4">Where to find {{ object.username }}</h1>

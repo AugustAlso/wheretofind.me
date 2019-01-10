@@ -1,3 +1,4 @@
+from django.contrib.staticfiles.templatetags.staticfiles import static
 from django.views.generic.base import RedirectView
 from django.views.generic.detail import DetailView
 from django.views.generic.base import TemplateView
@@ -25,6 +26,8 @@ class UserProfileView(DetailView):
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
         context["identities"] = context["object"].internetidentity_set.all()
+        context["here"] = self.request.build_absolute_uri()
+        context["logo"] = self.request.build_absolute_uri(static("img/logo.png"))
         return context
 
 

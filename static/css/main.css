@@ -19,3 +19,8 @@ html {
 .card-deck .card {
   min-width: 220px;
 }
+
+.logo {
+  height: 1.5em;
+  width: 1.5em;
+}

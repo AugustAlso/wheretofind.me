@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="">
+    {% block "opengraph" %}
+    {% endblock "opengraph" %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/logo.png' %}"/>
 
     <title>Where to find me</title>
 
@@ -18,7 +20,12 @@
 
   <body>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <h5 class="my-0 mr-md-auto font-weight-normal"><a href="/">Where to find me</a></h5>
+      <h5 class="my-0 mr-md-auto font-weight-normal">
+        <a href="/">
+          <img src="{% static 'img/logo.png' %}" alt="Where to Find Me logo" class="logo">
+          Where to find me
+        </a>
+      </h5>
       {% if user.is_authenticated %}
       <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-dark" href="{% url "identity-edit" %}">Edit</a>
